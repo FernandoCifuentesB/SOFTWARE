@@ -1,0 +1,28 @@
+@startuml diagramaCasoUsoDiez
+left to right direction
+actor "Gerente" as Gerente
+
+rectangle "Generar Reporte - NeoProv" {
+    usecase "Generar_Reporte" as UC1
+    usecase "Exportar_PDF" as UC2
+    usecase "Entregar_Resultado" as UC3
+    usecase "Generar_Salida_Formato" as UC4
+    usecase "Consultar_Datos" as UC5
+    usecase "Validar_Entrada_Filtros" as UC6
+    usecase "Definir_Parámetros_Filtro" as UC7
+    usecase "Seleccionar_Tipo_Reporte" as UC8
+}
+
+Gerente --> UC1
+UC1 --> UC2 : <<extend>>
+UC1 --> UC3 : <<include>>
+UC1 --> UC4 : <<include>>
+UC1 --> UC5 : <<include>>
+UC1 --> UC6 : <<include>>
+UC1 --> UC7 : <<include>>
+UC1 --> UC8 : <<include>>
+
+
+
+
+@enduml

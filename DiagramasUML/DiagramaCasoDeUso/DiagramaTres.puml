@@ -1,0 +1,22 @@
+@startuml diagramaCasoUsoTres
+left to right direction
+actor "Gerente" as Gerente
+
+rectangle "Crear Proveedor - NeoProv" {
+    usecase "Crear_Proveedor" as UC1
+    usecase "Confrmar_Registro" as UC2
+    usecase "Guardar_Datos" as UC3
+    usecase "Verificar_Campos_Obligatorios" as UC4
+    usecase "Completar_Formulario" as UC5
+}
+
+Gerente --> UC1
+UC1 --> UC2 : <<include>>
+UC1 --> UC3 : <<include>>
+UC1 --> UC4 : <<include>>
+UC1 --> UC5 : <<include>>
+
+
+
+
+@enduml

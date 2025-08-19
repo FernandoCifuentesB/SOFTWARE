@@ -1,0 +1,22 @@
+@startuml diagramaCasoUsoSeis
+left to right direction
+actor "Gerente" as Gerente
+actor "Auxiliar Gerencia" as AuxGerencia
+
+rectangle "Consultar Proveedor - NeoProv" {
+    usecase "Consultar_Proveedor" as UC1
+    usecase "Mostrar_Resultado" as UC2
+    usecase "Ejecutar_Consulta" as UC3
+    usecase "Validar_Criterios" as UC4
+    usecase "Ingresar_Criterios_Busqueda" as UC5
+}
+
+Gerente --> UC1
+AuxGerencia --> UC1
+
+UC1 --> UC2 : <<include>>
+UC1 --> UC3 : <<include>>
+UC1 --> UC4 : <<include>>
+UC1 --> UC5 : <<include>>
+
+@enduml

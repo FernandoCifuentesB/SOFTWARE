@@ -1,0 +1,27 @@
+@startuml diagramaCasoUsoSiete
+left to right direction
+actor "Gerente" as Gerente
+actor "Auxiliar Gerencia" as AuxGerencia
+
+rectangle "Registrar Estado de Factura - NeoProv" {
+    usecase "Registrar_Estado_Factura" as UC1
+    usecase "Confirmar_Registro" as UC2
+    usecase "Actualizar_Estado_Factura" as UC3
+    usecase "Validar_Datos_Factura" as UC4
+    usecase "Buscar_Factura" as UC5
+    usecase "Seleccionar_Factura" as UC6
+
+}
+
+Gerente --> UC1
+AuxGerencia --> UC1
+
+UC1 --> UC2 : <<include>>
+UC1 --> UC3 : <<include>>
+UC1 --> UC4 : <<include>>
+UC1 --> UC5 : <<include>>
+UC5 --> UC6 : <<include>>
+
+
+
+@enduml

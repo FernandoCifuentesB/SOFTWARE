@@ -1,0 +1,23 @@
+@startuml diagramaCasoUsoCuatro
+left to right direction
+actor "Gerente" as Gerente
+
+rectangle "Cambiar Estado de Proveedor - NeoProv" {
+    usecase "Cambiar_Estado_Proveedor" as UC1
+    usecase "Actualizar_Estado_Proveedor" as UC2
+    usecase "Confirmar_Cambio" as UC3
+    usecase "Aplicar_Estado_Cambio" as UC4
+    usecase "Seleccionar_Proveedor" as UC5
+    usecase "Buscar_Proveedor" as UC6
+}
+
+Gerente --> UC1
+UC1 --> UC2 : <<include>>
+UC1 --> UC3 : <<include>>
+UC1 --> UC4 : <<include>>
+UC1 --> UC5 : <<include>>
+UC1 --> UC6 : <<include>>
+
+
+
+@enduml

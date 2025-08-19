@@ -1,0 +1,64 @@
+@startuml "DiagramaActividadesCinco"
+|Gerente|
+start
+:Selecciona la opcion "Proveedores">\n"Cambiar estado de Proveedor";
+
+|Sistema NEOPROV|
+:Muestra campo de búsqueda\npor NIT o razón social;
+
+|Gerente|
+:Ingresa NIT o razón \nsocial del proveedor;
+
+|BD Proveedores|
+:Busca coincidencias \nde busqueda;
+
+|Sistema NEOPROV|
+:Muestra la lista de \ncoincidencias de\nbúsqueda;
+
+|Gerente|
+:Selecciona proveedor de \nla lista desplegada;
+
+|Sistema NEOPROV|
+:Muestra detalles del\n proveedor seleccionado;
+
+|Gerente|
+:Dale clic en "Activar/Inactivar \n proveedor";
+
+|BD Proveedores|
+:Verifica si el proveedor\nestá activo o inactivo;
+
+|Sistema NEOPROV|
+
+if (¿Está activo?) then (No)
+:No permite cambiar el estado;
+
+else (Sí)
+:Muestra formulario\neditable;
+
+|Gerente|
+:Modifica los campos\n deseados;
+:Confirma cambios;
+
+|Sistema NEOPROV|
+:Ejecuta validaciones\n de datos;
+
+if (¿Validaciones correctas?) then (No)
+
+else (Sí)
+
+:Envía los datos actualizados;
+
+|BD Proveedores|
+:Actualiza estado del proveedor;
+
+|Sistema NEOPROV|
+:Mostrar mensaje de confirmación;
+
+|Gerente|
+:Acepta confirmación;
+
+endif
+endif
+
+end
+@enduml

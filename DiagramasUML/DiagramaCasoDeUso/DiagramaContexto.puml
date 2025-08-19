@@ -1,0 +1,22 @@
+@startuml diagramaCasoUsoDos
+left to right direction
+actor "Gerente" as Gerente
+actor "Auxiliar Gerencia" as AuxGerencia
+
+rectangle "NeoProv" {
+    usecase "Gestionar_Reporte" as UC2
+    usecase "Gestionar_Pagos" as UC3
+    usecase "Gestionar_Proveedor" as UC4
+    usecase "Gestionar_Usurios" as UC5
+}
+
+Gerente --> UC5
+Gerente --> UC4
+Gerente --> UC3
+Gerente --> UC2
+AuxGerencia --> UC4
+AuxGerencia --> UC2
+AuxGerencia --> UC5
+
+
+@enduml

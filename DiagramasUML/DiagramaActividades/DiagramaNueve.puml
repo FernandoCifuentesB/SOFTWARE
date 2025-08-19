@@ -1,0 +1,47 @@
+@startuml "DiagramaActividadesNueve"
+
+|Gerente|
+start
+:Accede al modulo "Pagos";
+:Selecciona la opción\n "Consultar Pagos a Proveedores";
+
+|UI GIP|
+:Muestra interfaz de consulta\ncon filtros de busqueda;
+
+|Gerente|
+:Ingresa los parametros de\n busqueda en los campos\n mostrados;
+:Hace clic en el botón "Buscar";
+
+|Lógica del Sistema|
+:Ejecuta validación de los filtros;
+
+if ("¿Filtros válidos?") then (No)
+
+|UI GIP|
+:Mostrar mensaje error;
+
+|Gerente|
+:Aceptar mensaje;
+else (Sí)
+
+|Lógica del Sistema|
+:Realiza consulta a la base de\n datos con los filtros\n ingresados;
+
+|BD Proveedores|
+:Recupera los pagos que coinciden\ncon los filtros;
+:Envia los datos encontrados en\nla lógica del sistema;
+
+|Lógica del Sistema|
+:Organiza los datos y ajusta directamente \nlas columnas del listado según el estado de \n la factura;
+
+|UI GIP|
+:Muestra el listado completo\nde resultados, con enlaces o iconos\npara visualizar comprobantes\n(si aplica);
+
+|Gerente|
+:Visualiza el resultado de la busqueda;
+
+:Accede al comprobante de\npago si el estado es "Pagado";
+endif
+
+end
+@enduml

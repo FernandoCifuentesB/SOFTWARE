@@ -1,0 +1,32 @@
+@startuml "DiagramaActividadesSiete"
+|Gerente|
+start
+:Selecciona opcion\nconsultar proveedores;
+:Ingresar parametros de\nbúsqueda;
+
+|UI GIP|
+:Enviar parametros de consulta;
+
+|Lógica del Sistema|
+:Consulta con parametros;
+
+|BD Proveedores|
+:Validar parametros;
+
+if (¿Cambiar el estado de\n factura a "Pagada") then (No)
+:Mostrar mensaje error;
+
+else (Sí)
+|Lógica del Sistema|
+:Apertura de cajero;
+
+|UI GIP|
+:Muestra información de\n proveedores;
+
+
+|Gerente|
+:Visualiza la información \n del mensaje del\n proveedor;
+endif
+
+end
+@enduml

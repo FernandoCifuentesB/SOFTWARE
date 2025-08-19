@@ -1,0 +1,23 @@
+@startuml diagramaCasoUsoDos
+left to right direction
+actor "Gerente" as Gerente
+actor "Auxiliar Gerencia" as AuxGerencia
+
+rectangle "NeoProv" {
+    usecase "Registrar_Estado_Factura" as UC1
+    usecase "ConsultraPagos" as UC2
+    usecase "Generar_Listado_pagos" as UC3
+}
+
+
+
+Gerente --> UC1
+Gerente --> UC3
+Gerente --> UC2
+AuxGerencia --> UC1
+AuxGerencia --> UC2
+AuxGerencia --> UC3
+
+
+
+@enduml

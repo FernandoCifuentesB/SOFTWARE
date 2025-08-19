@@ -1,0 +1,62 @@
+@startuml "DiagramaActividadesOcho"
+|Gerente|
+start
+:Accede al modulo "Pagos";
+:Selecciona la opción \n"Registrar Estado de Factura";
+
+|UI GIP|
+:Muestra interfaz con opciones de\nbusqueda o registro de factura;
+
+|Gerente|
+:Selecciona una factura existente\no hace clic en "Registrar";
+
+|UI GIP|
+:Despliega el formulario\n(vacio o precargado);
+
+|Gerente|
+:Diligencia los campos;
+
+|Lógica del Sistema|
+
+if (¿Cambiar el estado de\n factura a "Pagada") then (No)
+|Gerente|
+:Mostrar mensaje error;
+:Ingresar nuevamente datos;
+else (Sí)
+|UI GIP|
+:Habilita campos adicionales;
+
+|Gerente|
+:Diligencianlos campos adicionales;
+
+
+|Lógica del Sistema|
+:Ejecuta validación completa de\n de todos los datos ingresados;
+
+if (¿Datos validos") then (No)
+|UI GIP|
+:Mostrar mensaje error;
+
+|Gerente|
+:Aceptar mensaje;
+
+else (Sí)
+|BD Proveedores|
+:Almacena los datos en la base\nde datos relacional;
+:Confirma que el almacenamiento\nfue exitoso;
+
+
+|Logica del Sistema|
+:Genera y envía mensaje \n de confirmación;
+
+
+|UI GIP|
+:Muestra mensaje de confirmación:\n"Reporte generado con éxito";
+
+|Gerente|
+:Visualiza el mensaje y\n finaliza la operacion;
+endif
+endif
+
+end
+@enduml

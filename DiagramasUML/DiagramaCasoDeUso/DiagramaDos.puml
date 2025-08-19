@@ -1,0 +1,22 @@
+@startuml diagramaCasoUsoDos
+left to right direction
+actor "Gerente" as Gerente
+actor "Auxiliar Gerencia" as AuxGerencia
+
+rectangle "Identificar Usuario - NeoProv" {
+    usecase "Identificar_Usuario" as UC1
+    usecase "Cargar_Interfaz_Segun_Rol" as UC2
+    usecase "Consultar_Rol" as UC3
+    usecase "Validar_Credenciales" as UC4
+    usecase "Ingresar_Datos" as UC5
+}
+
+Gerente --> UC1
+AuxGerencia --> UC1
+
+UC1 --> UC2 : <<include>>
+UC1 --> UC3 : <<include>>
+UC1 --> UC4 : <<include>>
+UC1 --> UC5 : <<include>>
+
+@enduml

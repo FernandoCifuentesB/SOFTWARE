@@ -1,0 +1,28 @@
+@startuml diagramaFuncionesNP
+left to right direction
+actor "Gerente" as Gerente
+
+rectangle "NeoProv" {
+    usecase "Crear_Proveedor" as UC1
+    usecase "Actualizar_Proveedor" as UC2
+    usecase "Deshabilitar_Proveedor" as UC3
+    usecase "Consultar_Proveedor" as UC4
+    usecase "Consultar_Pagos" as UC5
+    usecase "Generar_Listado_Pagos" as UC6
+    usecase "Registro_pagos" as UC7
+    usecase "Evaluar_Proveedor" as UC8
+    usecase "Generar_Reporte" as UC9
+}
+
+Gerente --> UC5
+Gerente --> UC4
+Gerente --> UC3
+Gerente --> UC2
+Gerente --> UC1
+Gerente --> UC6
+Gerente --> UC7
+Gerente --> UC8
+Gerente --> UC9
+
+
+@enduml

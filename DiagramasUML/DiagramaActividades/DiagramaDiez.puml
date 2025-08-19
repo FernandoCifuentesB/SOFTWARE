@@ -1,0 +1,45 @@
+@startuml "DiagramaActividadesDiez"
+|Gerente|
+start
+:Accede al modulo "Pagos";
+:Selecciona la opción "Pagos Pendientes";
+
+|UI GIP|
+:Muestra listado automático de\npagos pendientes con columnas;
+
+|Gerente|
+:Selecciona uno o varios pagos\nmediante las casillas;
+:Hace clic en el botón "Generar Reporte";
+
+|UI GIP|
+:Muestra ventana emergente\ncon opciones de exportación;
+
+if ("¿Confirmar exportar PDF?") then (No)
+|Gerente|
+:Mostrar mensaje error;
+:Ingresar nuevamente datos;
+else (Sí)
+|UI GIP|
+:Muestra previsualización del documento;
+:Usuario hace clic en "Exportar PDF";
+
+|Lógica del Sistema|
+:Recupera los pagos que coinciden\ncon los filtros;
+:Valida los registros seleccionados,\norganiza la información\npara el reporte;
+:Solicita a la Base de datos la\ninformación detallada de los pagos;
+
+|BD Proveedores|
+:Devuelve los datos necesarios;
+
+|Lógica del Sistema|
+:Genera el reporte en formato PDF\ncon los datos organizados y formateados;
+
+|UI GIP|
+:Muestra mensaje de confirmación:\n"Reporte generado con éxito";
+
+|Gerente|
+:Visualiza la notificación de éxito;
+endif
+
+end
+@enduml

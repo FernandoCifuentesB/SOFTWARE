@@ -1,0 +1,22 @@
+@startuml diagramaCasoUsoUno
+left to right direction
+actor "Gerente" as Gerente
+actor "Auxiliar Gerencia" as AuxGerencia
+
+rectangle "Registrar Usuario - NeoProv" {
+    usecase "Registrar_Usuario" as UC1
+    usecase "Ingresar_Datos" as UC2
+    usecase "Validar_Datos" as UC3
+    usecase "Almacenar_Usuario" as UC4
+    usecase "Confirmar_Registro" as UC5
+}
+
+Gerente --> UC1
+AuxGerencia --> UC1
+
+UC1 --> UC2 : <<include>>
+UC1 --> UC3 : <<include>>
+UC1 --> UC4 : <<include>>
+UC1 --> UC5 : <<include>>
+
+@enduml

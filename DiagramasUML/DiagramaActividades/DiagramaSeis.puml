@@ -1,0 +1,60 @@
+@startuml "DiagramaActividadesSeis"
+|Gerente|
+start
+:Selecciona "Proveedores">\n"Actualizar Proveedores";
+
+|Sistema GIP|
+:Muestra campo de búsqueda\npor NIT o razón social;
+
+|Gerente|
+:Ingresa NIT o razón \nsocial del proveedor;
+
+|BD Proveedores|
+:Busca coincidencias \nde busqueda;
+
+|Sistema GIP|
+:Muestra la lista de \ncoincidencias de\nbúsqueda;
+
+|Gerente|
+:Selecciona proveedor de \nla lista desplegada;
+
+|Sistema GIP|
+:Muestra detalles del\n proveedor seleccionado;
+
+|Gerente|
+:Dale clic en "Actualizar \n información";
+
+|Sistema GIP|
+:Muestra formulario \nde actuazlización;
+
+|Gerente|
+:Llena los campos del \nformulario y da clic en\n"Confirmar actualización";
+
+
+if (¿Da clic en aceptar?) then (No)
+
+else (Sí)
+|Sistema GIP|
+:Validar campos del formulario;
+
+if (¿Campos del formulario?) then (No)
+
+|Gerente|
+:Mensaje de corrección \nde datos;
+else (Sí)
+
+|BD Proveedores|
+:Actualiza el estado\nel proveedor;
+:Retorna mensaje de éxito;
+
+|Sistema GIP|
+:Mostrar mensaje de confirmación;
+
+|Gerente|
+:Acepta confirmación;
+
+endif
+endif
+
+end
+@enduml

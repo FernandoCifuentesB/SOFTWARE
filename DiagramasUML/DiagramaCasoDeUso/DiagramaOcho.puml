@@ -1,0 +1,32 @@
+@startuml diagramaCasoUsoOcho
+left to right direction
+actor "Gerente" as Gerente
+actor "Auxiliar Gerencia" as AuxGerencia
+
+rectangle "Consultar Pagos -NeoProv" {
+    usecase "Consultar_Pagos" as UC1
+    usecase "Mostrar_Listado_Pagos" as UC2
+    usecase "Validar_Busqueda" as UC3
+    usecase "Visualizar_Componente_Pago" as UC4
+    usecase "Validar_Existencia_Proveedor" as UC5
+    usecase "Validar_Formato_Datos" as UC6
+    usecase "Filtrar_Listado_pagos" as UC7
+    usecase "Ordenar_Listado_Pagos" as UC8
+
+
+}
+
+Gerente --> UC1
+AuxGerencia --> UC1
+
+UC1 --> UC2 : <<include>>
+UC1 --> UC3 : <<include>>
+UC2 --> UC4 : <<include>>
+UC2 --> UC7 : <<include>>
+UC2 --> UC8 : <<include>>
+UC3 --> UC5 : <<include>>
+UC3 --> UC6 : <<include>>
+
+
+
+@enduml
