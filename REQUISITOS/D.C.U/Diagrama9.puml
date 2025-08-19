@@ -19,14 +19,14 @@ rectangle "Generar Listado de Pagos - NeoProv" {
 Gerente --> UC1
 AuxGerencia --> UC1
 
-UC1 --> UC2 : <<extend>>
-UC1 --> UC3 : <<include>>
-UC1 --> UC4 : <<include>>
-UC4 --> UC7 : <<include>>
-UC4 --> UC8 : <<include>>
-UC4 --> UC5 : <<include>>
-UC4 --> UC6 : <<include>>
-UC4 --> UC9 : <<include>>
+UC1 ..> UC2 : <<extend>>
+UC1 ..> UC3 : <<include>>
+UC1 ..> UC4 : <<include>>
+UC4 ..> UC7 : <<include>>
+UC4 ..> UC8 : <<include>>
+UC4 ..> UC5 : <<include>>
+UC4 ..> UC6 : <<include>>
+UC4 ..> UC9 : <<include>>
 
 
 

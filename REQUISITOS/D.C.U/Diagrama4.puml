@@ -12,11 +12,11 @@ rectangle "Cambiar Estado de Proveedor - NeoProv" {
 }
 
 Gerente --> UC1
-UC1 --> UC2 : <<include>>
-UC1 --> UC3 : <<include>>
-UC1 --> UC4 : <<include>>
-UC1 --> UC5 : <<include>>
-UC1 --> UC6 : <<include>>
+UC1 ..> UC2 : <<include>>
+UC1 ..> UC3 : <<include>>
+UC1 ..> UC4 : <<include>>
+UC1 ..> UC5 : <<include>>
+UC1 ..> UC6 : <<include>>
 
 
 
